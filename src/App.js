@@ -52,6 +52,7 @@ alertFunction(true, "success", "Item editted successfully");
     alertFunction(true, "danger", "Todo Items cleared");
   };
 
+
   const alertFunction = (show = false, type = "", message = "") => {
     setShowAlert({ show: show, type: type, message: message });
   };
@@ -75,7 +76,7 @@ useEffect(() => {
   return (
     <section className="section">
       <div className="section-center">
-        {showAlert && <Alert showAlert={showAlert} />}
+        {showAlert && <Alert showAlert={showAlert} alertFunction={alertFunction} items={items}/>}
         <div className="grocery-form">
           <h3>Grocery Bud</h3>
           <form className="form-control" onSubmit={handleSubmit}>
